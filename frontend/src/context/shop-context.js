@@ -1,24 +1,24 @@
 import { createContext, useEffect, useState } from "react";
-import { ProductsList } from "../products";
+import { PRODUCTS } from "../products";
 
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 1; i < ProductsList.length + 1; i++) {
+  for (let i = 1; i < PRODUCTS.length + 1; i++) {
     cart[i] = 0;
   }
   return cart;
 };
 
-export const ShopContextProvider = (props) => {
+const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        let itemInfo = ProductsList.find((product) => product.id === Number(item));
+        let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
         totalAmount += cartItems[item] * itemInfo.price;
       }
     }
@@ -56,3 +56,5 @@ export const ShopContextProvider = (props) => {
     </ShopContext.Provider>
   );
 };
+
+export default ShopContextProvider

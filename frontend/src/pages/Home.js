@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import { PRODUCTS } from "../products"
+import { Product } from "./product"
+import "../styles/shop.css"
 
 // components
 import ProductDetails from "../components/ProductDetails"
@@ -22,8 +25,8 @@ const Home = () => {
   return (
     <div className="home">
       <div className="products">
-        {products && products.map(product => (
-          <ProductDetails product={product} key={product._id} />
+        {PRODUCTS.map((product) => (
+          <Product data={product} />
         ))}
       </div>
     </div>

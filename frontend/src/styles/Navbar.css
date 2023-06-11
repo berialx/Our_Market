@@ -73,6 +73,7 @@
     }
     .navbar .leftSide {
       padding-left: 50px;
+      justify-content: flex-end;
     }
   }
   
