@@ -23,12 +23,16 @@ const Home = () => {
   }, [])
 
   return (
+    <div><div className="Moto">
+      <h2>Shop Smart Shop Easy!!!</h2>
+    </div>
     <div className="home">
       <div className="products">
         {PRODUCTS.map((product) => (
           <Product data={product} />
         ))}
       </div>
+    </div>
     </div>
   )
 }
