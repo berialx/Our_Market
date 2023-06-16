@@ -21,7 +21,10 @@ const Navbar = () => {
           <h1>የኛ ገበያ-Our Market</h1>
         </Link>
         <nav>
-        {user && (
+          <div className='links'>
+            <Link to="/">Home</Link>
+            <Link to="/about">About Us</Link>
+            {user && (
             <div>
               <span>{user.email}</span>
               <button onClick={handleClick}>Log out</button>
@@ -33,11 +36,6 @@ const Navbar = () => {
               <Link to="/signup">Signup</Link>
             </div>
           )}
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
             <Link to="/cart"><ShoppingCart size={32} /></Link>
           </div>
         </nav>
